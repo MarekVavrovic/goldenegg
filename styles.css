@@ -1,0 +1,784 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: LightBlue;
+  overflow: hidden;
+}
+
+.container {
+  width: 95vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+.theman {
+  z-index: 9;
+  position: fixed;
+  top: 20%;
+  width: 400px;
+  margin-left: 22%;
+  animation: float 5s infinite;
+}
+
+.head {
+  z-index: 1;
+  position: absolute;
+  top: 55px;
+  left: 55px;
+  width: 100px;
+  height: 120px;
+  background-color: PeachPuff;
+  border-radius: 50%;
+  box-shadow: -5px 3px 3px rgba(55, 55, 55, 0.3);
+}
+
+.beard {
+  position: absolute;
+  top: 60px;
+  width: 100px;
+  height: 90px;
+}
+
+.beard:before,
+.beard:after {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  content: "";
+  width: 50px;
+  height: 80px;
+  background: Maroon;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  box-shadow: 1px 3px 3px rgba(55, 55, 55, 0.3);
+}
+
+.beard:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.mouth {
+  z-index: 1;
+  position: absolute;
+  top: 75px;
+  left: 28px;
+  width: 45px;
+  height: 20px;
+  background: PeachPuff;
+  border-radius: 50%;
+  transform: rotate(180deg);
+}
+
+.mouth:after {
+  position: absolute;
+  left: 5px;
+  content: "";
+  width: 35px;
+  height: 10px;
+  border-radius: 50%;
+  border-bottom: 2px solid black;
+  box-shadow: 0px 3px 3px rgba(55, 55, 55, 0.3);
+  z-index: 1;
+}
+
+.cheeks:before,
+.cheeks:after {
+  position: absolute;
+  top: 58px;
+  left: 12px;
+  content: "";
+  width: 35px;
+  height: 10px;
+  border-radius: 50%;
+  background: PeachPuff;
+}
+
+.cheeks:after {
+  left: 52px;
+}
+
+.eyes:before,
+.eyes:after {
+  position: absolute;
+  z-index: 1;
+  top: 46px;
+  left: 22px;
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: PeachPuff; /* Assuming 'skin' is PeachPuff */
+  border-radius: 50%;
+  border-top: 2px solid black;
+}
+
+.eyes:after {
+  left: 62px;
+}
+
+.hairleft,
+.hairright {
+  position: absolute;
+  top: 65px;
+  left: 45px;
+  width: 55px;
+  height: 135px;
+  background: Maroon; /* Assuming 'hair' is Maroon */
+  border-radius: 50%;
+}
+
+.hairright {
+  left: 107px;
+}
+
+.bangsleft,
+.bangsright {
+  position: absolute;
+  left: 2px;
+  width: 25px;
+  height: 55px;
+  background: Maroon; /* Assuming `hair` is Maroon */
+  border-radius: 50%;
+  transform: rotate(39deg);
+}
+
+.bangsright {
+  left: 72px;
+  transform: rotate(140deg);
+}
+
+.bangsright:before,
+.bangsleft:before {
+  position: absolute;
+  top: 35px;
+  right: -19px;
+  content: "";
+  width: 52px;
+  height: 28px;
+  background: Maroon; /* Assuming `hair` is Maroon */
+  border-radius: 50%;
+  transform: rotate(52deg);
+}
+
+.bangsleft:before {
+  left: -9px;
+  top: -6px;
+  transform: rotate(124deg);
+}
+
+.forehead1,
+.forehead2 {
+  position: absolute;
+  top: 32px;
+  left: -4px;
+  width: 53px;
+  height: 10px;
+  background: PeachPuff; /* Assuming `skin` is PeachPuff */
+  border-radius: 50%;
+  transform: rotate(-36deg);
+}
+
+.forehead2 {
+  left: 50px;
+  width: 53px;
+  height: 12px;
+  transform: rotate(36deg);
+}
+
+.hairline {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 40px;
+  height: 10px;
+  background: Maroon; /* Assuming `hair` is Maroon */
+  border-radius: 50%;
+}
+
+.torso {
+  position: absolute;
+  top: 170px;
+  left: 48px;
+  width: 110px;
+  height: 200px;
+  background: White; /* Assuming `coat` is White */
+  border-radius: 36% 36% 0 0;
+  border: 1px solid rgba(55, 55, 55, 0.4);
+  border-bottom: none;
+}
+
+.torso:after {
+  position: absolute;
+  top: 200px;
+  left: -1px;
+  content: "";
+  width: 110px;
+  height: 10px;
+  background: White; /* Assuming `coat` is White */
+  border-radius: 0 0 50% 50%;
+  border: 1px solid rgba(55, 55, 55, 0.4);
+  border-top: none;
+  box-shadow: 0px 3px 3px rgba(55, 55, 55, 0.3);
+}
+
+.egg {
+  z-index: 1;
+  position: absolute;
+  top: -20px;
+  width: 86px;
+  height: 120px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  background-image: linear-gradient(
+    160deg,
+    #a54e07,
+    #b47e11,
+    #fef1a2,
+    #bc881b,
+    #a54e07
+  );
+  border-radius: 50% / 60%;
+  transform: rotate(-40deg);
+  box-shadow: -3px 3px 3px rgba(55, 55, 55, 0.3);
+}
+
+.egg:before {
+  z-index: 5;
+  position: absolute;
+  top: 4px;
+  left: 22px;
+  content: "";
+  width: 43px;
+  height: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  background-image: linear-gradient(
+    160deg,
+    #a54e07,
+    #b47e11,
+    #fef1a2,
+    #bc881b,
+    #a54e07
+  );
+  border-radius: 80%;
+  border-bottom: 3px dotted LemonChiffon; /* Assuming `stripe1` is LemonChiffon */
+}
+
+.egg:after {
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  content: "";
+  width: 54px;
+  height: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  background-image: linear-gradient(
+    160deg,
+    #a54e07,
+    #b47e11,
+    #fef1a2,
+    #bc881b,
+    #a54e07
+  );
+  border-radius: 80%;
+  border-bottom: 3px dotted White; /* Assuming `stripe2` is White */
+}
+
+.arm1 {
+  z-index: 5;
+  position: absolute;
+  top: 35px;
+  left: -19px;
+  width: 94px;
+  height: 50px;
+  background: White; /* Assuming `arm1` background is White */
+  border-radius: 10px 4px 2px 65%;
+  border: 1px solid rgba(55, 55, 55, 0.4);
+  box-shadow: 1px 3px 3px rgba(55, 55, 55, 0.3);
+}
+
+.arm1:before {
+  z-index: 3;
+  position: absolute;
+  top: -8px;
+  left: 13px;
+  content: "";
+  width: 77px;
+  height: 14px;
+  background: White; /* Assuming `egg` is Plum */
+  border-radius: 10% 50% 50% 50%;
+}
+
+.arm1:after {
+  z-index: 2;
+  position: absolute;
+  top: -5px;
+  left: 2px;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: White; /* Assuming `coat` is White */
+  border-radius: 50%;
+}
+
+.hand {
+  z-index: 5;
+  position: absolute;
+  top: 31px;
+  left: 70px;
+  width: 30px;
+  height: 20px;
+  background: PeachPuff; /* Assuming `skin` is PeachPuff */
+  border-radius: 50%;
+  border: 1px solid rgba(55, 55, 55, 0.4);
+  transform: rotate(-30deg);
+}
+
+.arm2 {
+  z-index: 4;
+  position: absolute;
+  top: 36px;
+  left: 22px;
+  width: 94px;
+  height: 50px;
+  background: White; /* Assuming `coat` is White */
+  border-radius: 68% 2px 80% 15px;
+  border: 1px solid rgba(55, 55, 55, 0.4);
+  border-bottom: none;
+  transform: rotate(170deg);
+  box-shadow: 0px -3px 3px rgba(55, 55, 55, 0.3);
+}
+
+.arm2:before {
+  z-index: 5;
+  position: absolute;
+  top: 44px;
+  left: 10px;
+  content: "";
+  background: White; /* Assuming `coat` is White */
+  height: 26px;
+  width: 10px;
+  border-radius: 20%;
+  transform: rotate(-29deg);
+}
+
+.foot1 {
+  z-index: -1;
+  position: absolute;
+  top: 354px;
+  left: 68px;
+  width: 25px;
+  height: 50px;
+  background: PeachPuff; /* Assuming `skin` is PeachPuff */
+  border-radius: 100%;
+  border: 5px solid SaddleBrown; /* Assuming `sandals` is SaddleBrown */
+}
+
+/*sedkjglajga*/
+.foot1 {
+  position: absolute;
+  z-index: -1;
+  top: 354px;
+  left: 68px;
+  width: 25px;
+  height: 50px;
+  background: PeachPuff; /* Assuming 'skin' is PeachPuff */
+  border-radius: 100%;
+  border: 5px solid SaddleBrown; /* Assuming 'sandals' is SaddleBrown */
+}
+
+.foot1:before,
+.foot1:after {
+  position: absolute;
+  content: "";
+  background: transparent;
+}
+
+.foot1:before {
+  top: 35px;
+  left: 13px;
+  width: 9px;
+  height: 15px;
+  border: 3px solid SaddleBrown; /* Assuming 'sandals' is SaddleBrown */
+  border-right: none;
+  border-bottom: none;
+}
+
+.foot1:after {
+  top: 35px;
+  left: 1px;
+  width: 12px;
+  height: 15px;
+  border: 3px solid SaddleBrown; /* Assuming 'sandals' is SaddleBrown */
+  border-left: none;
+  border-bottom: none;
+}
+
+.foot2 {
+  position: absolute;
+  z-index: -1;
+  top: 354px;
+  left: 108px;
+  width: 25px;
+  height: 50px;
+  background: PeachPuff; /* Assuming 'skin' is PeachPuff */
+  border-radius: 100%;
+  border: 5px solid SaddleBrown; /* Assuming 'sandals' is SaddleBrown */
+}
+
+.foot2:before,
+.foot2:after {
+  position: absolute;
+  content: "";
+  background: transparent;
+}
+
+.foot2:before {
+  top: 35px;
+  left: 10px;
+  width: 12px;
+  height: 15px;
+  border: 3px solid SaddleBrown; /* Assuming 'sandals' is SaddleBrown */
+  border-right: none;
+  border-bottom: none;
+}
+
+.foot2:after {
+  top: 35px;
+  left: 1px;
+  width: 8px;
+  height: 15px;
+  border: 3px solid SaddleBrown; /* Assuming 'sandals' is SaddleBrown */
+  border-left: none;
+  border-bottom: none;
+}
+
+div.halo {
+  position: absolute;
+  z-index: -1;
+  top: 65px;
+  left: 68px;
+  background: rgba(253, 223, 0, 0.4);
+  height: 300px;
+  width: 60px;
+  border-radius: 100px;
+  animation: glow 5s infinite;
+}
+
+.cloud1,
+.cloud2,
+.cloud3,
+.cloud4,
+.cloud5,
+.cloud6,
+.cloud7,
+.cloud8,
+.cloud9,
+.cloud10,
+.cloud11 {
+  position: absolute;
+  width: 220px;
+  height: 80px;
+  background: whitesmoke;
+  border-radius: 100px;
+  box-shadow: 3px 3px 3px rgba(55, 55, 55, 0.3);
+}
+
+.cloud1 {
+  left: 800px;
+  top: 600px;
+  animation: glide 190s infinite;
+}
+.cloud2 {
+  left: 100px;
+  top: 100px;
+  animation: glide 290s infinite;
+}
+.cloud3 {
+  left: 250px;
+  top: 700px;
+  animation: glide 90s infinite;
+}
+.cloud4 {
+  left: 600px;
+  top: 200px;
+  animation: glide 90s infinite;
+}
+.cloud5 {
+  left: 300px;
+  top: 400px;
+  animation: glide 90s infinite;
+}
+.cloud6 {
+  left: 1300px;
+  top: 500px;
+  animation: glide 120s infinite;
+}
+.cloud7 {
+  left: 1000px;
+  top: 170px;
+  animation: glide 100s infinite;
+}
+.cloud8 {
+  left: 1000px;
+  top: 440px;
+  animation: glide 80s infinite;
+}
+.cloud9 {
+  left: 1200px;
+  top: 620px;
+  animation: glide 280s infinite;
+}
+.cloud10 {
+  left: 1300px;
+  top: 140px;
+  animation: glide 250s infinite;
+}
+.cloud11 {
+  left: 1400px;
+  top: 380px;
+  animation: glide 190s infinite;
+}
+
+.cloud1::before,
+.cloud2::before,
+.cloud3::before,
+.cloud4::before,
+.cloud5::before,
+.cloud6::before,
+.cloud7::before,
+.cloud8::before,
+.cloud9::before,
+.cloud10::before,
+.cloud11::before,
+.cloud1::after,
+.cloud2::after,
+.cloud3::after,
+.cloud4::after,
+.cloud5::after,
+.cloud6::after,
+.cloud7::after,
+.cloud8::after,
+.cloud9::after,
+.cloud10::after,
+.cloud11::after {
+  position: absolute;
+  content: "";
+  background: whitesmoke;
+  border-radius: 50%;
+}
+
+.cloud1::before,
+.cloud2::before,
+.cloud3::before,
+.cloud4::before,
+.cloud5::before,
+.cloud6::before,
+.cloud7::before,
+.cloud8::before,
+.cloud9::before,
+.cloud10::before,
+.cloud11::before {
+  top: -40px;
+  right: 100px;
+  width: 80px;
+  height: 80px;
+}
+
+.cloud1::after,
+.cloud2::after,
+.cloud3::after,
+.cloud4::after,
+.cloud5::after,
+.cloud6::after,
+.cloud7::after,
+.cloud8::after,
+.cloud9::after,
+.cloud10::after,
+.cloud11::after {
+  top: -50px;
+  right: 40px;
+  width: 100px;
+  height: 100px;
+}
+
+/*Navigate Button*/
+.golden-button {
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  touch-action: manipulation;
+  display: inline-block;
+  outline: none;
+  font-family: inherit;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.3em;
+  height: 2.75em;
+  line-height: 2.5em;
+  text-transform: uppercase;
+  padding: 0 1em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  background-image: linear-gradient(
+    160deg,
+    #a54e07,
+    #b47e11,
+    #fef1a2,
+    #bc881b,
+    #a54e07
+  );
+  border: 1px solid #a55d07;
+  color: rgb(120, 50, 5);
+  text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.golden-button:focus,
+.golden-button:hover {
+  background-size: 150% 150%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  border: 1px solid rgba(165, 93, 7, 0.6);
+  color: rgba(120, 50, 5, 0.8);
+}
+
+.golden-button:active {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+}
+
+/*Animations*/
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 10px 10px 50px #03c44d;
+  }
+  33% {
+    box-shadow: 10px 10px 250px #f93d04;
+  }
+  33% {
+    box-shadow: 10px 10px 250px #140501;
+  }
+  33% {
+    box-shadow: 10px 10px 250px #f93d04;
+  }
+  to {
+    box-shadow: 10px 10px 50px #2bed04;
+  }
+}
+
+@keyframes glide {
+  from {
+    right: -150px;
+  }
+  to {
+    left: -150px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .theman {
+    position: fixed; /* Keep it fixed or use absolute if inside a positioned parent */
+    top: 10%; /* Adjust to bring it closer to the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center-align "theman" */
+    width: 400px; /* Adjust if necessary for your design */
+    margin-left: auto;
+    margin-right: auto;
+    animation: float 5s infinite;
+  }
+   .golden-button {
+    position: fixed;
+    top: 25%;
+    left: 20%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+}
+
+
+
+/* Mobile Styles*/
+@media (max-width:768px) {
+  .theman {
+    position: relative;
+    top: 10%; /* Adjust top positioning */
+    width: 90%;
+    margin-left: 5%; /* Center the man */
+    margin-right: 5%;
+  }
+  .golden-button {
+    position: fixed;
+    top: 18%;
+    left: 13%;
+    transform: translateX(-50%);
+
+    z-index: 10;
+  }
+
+  .cloud1,
+  .cloud2,
+  .cloud3,
+  .cloud4,
+  .cloud5,
+  .cloud6,
+  .cloud7,
+  .cloud8,
+  .cloud9,
+  .cloud10,
+  .cloud11 {
+    width: 110px; 
+    height: 40px;
+  }
+  .cloud1 {
+    left: 20px;
+    top: 500px;
+  }
+  .cloud2 {
+    left: 50px;
+    top: 60px;
+  }
+  .cloud3 {
+    left: 120px;
+    top: 600px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}

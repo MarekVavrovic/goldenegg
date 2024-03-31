@@ -1,0 +1,231 @@
+BODY {
+  background: #aaaaaa;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin-top: -5rem;
+  margin-bottom: 1rem;
+}
+
+#table {
+  display: flex;
+  flex-direction: column;
+}
+
+.tile1,
+.tile2,
+.tile3,
+.tile4,
+.tile5,
+.tile6,
+.tile7,
+.tile8,
+.tile9 {
+  display: table-cell;
+  width: 120px;
+  height: 120px;
+  border: 1px solid white;
+  background: url("./img/golden\ egg.jpg");
+  background-repeat: no-repeat;
+  background-size: 360px 360px;
+  background-position: center;
+
+  cursor: pointer;
+}
+
+.tile1 {
+  background-position: left top;
+}
+.tile2 {
+  background-position: center top;
+}
+.tile3 {
+  background-position: right top;
+}
+.tile4 {
+  background-position: left center;
+}
+.tile5 {
+  background-position: center center;
+}
+.tile6 {
+  background-position: right center;
+}
+.tile7 {
+  background-position: left bottom;
+}
+.tile8 {
+  background-position: center bottom;
+}
+.tile9 {
+  background: white;
+  cursor: default;
+}
+
+/*New Game Button*/
+.golden-button {
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  touch-action: manipulation;
+  display: inline-block;
+  outline: none;
+  font-family: inherit;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.3em;
+  height: 2.75em;
+  line-height: 2.5em;
+  text-transform: uppercase;
+  padding: 0 1em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  background-image: linear-gradient(
+    160deg,
+    #a54e07,
+    #b47e11,
+    #fef1a2,
+    #bc881b,
+    #a54e07
+  );
+  border: 1px solid #a55d07;
+  color: rgb(120, 50, 5);
+  text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.golden-button:focus,
+.golden-button:hover {
+  background-size: 150% 150%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  border: 1px solid rgba(165, 93, 7, 0.6);
+  color: rgba(120, 50, 5, 0.8);
+}
+
+.golden-button:active {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+}
+
+@media (min-width: 768px) {
+  .tile1,
+  .tile2,
+  .tile3,
+  .tile4,
+  .tile5,
+  .tile6,
+  .tile7,
+  .tile8,
+  .tile9 {
+    width: 150px; /* Increased size for better visibility on tablets */
+    height: 150px;
+    border: 2px solid #fff; /* Slightly thicker border for better definition */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    background-size: 450px 450px; /* Adjust background size to fit new tile size */
+  }
+
+  /* Adjust background positions for larger tiles */
+  .tile1 {
+    background-position: 0 0;
+  }
+  .tile2 {
+    background-position: -150px 0;
+  }
+  .tile3 {
+    background-position: -300px 0;
+  }
+  .tile4 {
+    background-position: 0 -150px;
+  }
+  .tile5 {
+    background-position: -150px -150px;
+  }
+  .tile6 {
+    background-position: -300px -150px;
+  }
+  .tile7 {
+    background-position: 0 -300px;
+  }
+  .tile8 {
+    background-position: -150px -300px;
+  }
+  .tile9 {
+    background-position: -300px -300px;
+    background: white;
+  } /* Keep tile9 as white */
+}
+
+@media (min-width: 1025px) {
+  .tile1:hover,
+  .tile2:hover,
+  .tile3:hover,
+  .tile4:hover,
+  .tile5:hover,
+  .tile6:hover,
+  .tile7:hover,
+  .tile8:hover {
+    transform: scale(1.05); /* Slightly enlarge tiles on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25); /* Enhanced shadow for depth */
+    cursor: pointer; /* Ensure cursor indicates interactivity */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for scale and shadow */
+  }
+
+  .tile9:hover {
+    cursor: default; /* Tile 9 remains static */
+  }
+
+  .tile1,
+  .tile2,
+  .tile3,
+  .tile4,
+  .tile5,
+  .tile6,
+  .tile7,
+  .tile8,
+  .tile9 {
+    width: 180px; /* Further increased size for desktops */
+    height: 180px;
+    background-size: 540px 540px; /* Adjusted to fit the new scale */
+  }
+
+  /* Adjust background positions for larger tiles */
+  .tile1 {
+    background-position: 0 0;
+  }
+  .tile2 {
+    background-position: -180px 0;
+  }
+  .tile3 {
+    background-position: -360px 0;
+  }
+  .tile4 {
+    background-position: 0 -180px;
+  }
+  .tile5 {
+    background-position: -180px -180px;
+  }
+  .tile6 {
+    background-position: -360px -180px;
+  }
+  .tile7 {
+    background-position: 0 -360px;
+  }
+  .tile8 {
+    background-position: -180px -360px;
+  }
+  .tile9 {
+    background-position: -360px -360px;
+  }
+}
