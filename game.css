@@ -67,6 +67,53 @@ BODY {
   cursor: default;
 }
 
+/*Modal*/
+/* Modal styling */
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%; 
+  text-align: center; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+}
+.modal-content p {
+  margin: 0; 
+  font-size: 24px;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+    align-self: flex-end; 
+  margin-bottom: 25px; 
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /*New Game Button*/
 .golden-button {
   position: fixed;
@@ -129,14 +176,14 @@ BODY {
   .tile7,
   .tile8,
   .tile9 {
-    width: 150px; /* Increased size for better visibility on tablets */
+    width: 150px; 
     height: 150px;
-    border: 2px solid #fff; /* Slightly thicker border for better definition */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    background-size: 450px 450px; /* Adjust background size to fit new tile size */
+    border: 2px solid #fff; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    background-size: 450px 450px; 
   }
 
-  /* Adjust background positions for larger tiles */
+
   .tile1 {
     background-position: 0 0;
   }
@@ -164,7 +211,7 @@ BODY {
   .tile9 {
     background-position: -300px -300px;
     background: white;
-  } /* Keep tile9 as white */
+  } 
 }
 
 @media (min-width: 1025px) {
@@ -176,10 +223,10 @@ BODY {
   .tile6:hover,
   .tile7:hover,
   .tile8:hover {
-    transform: scale(1.05); /* Slightly enlarge tiles on hover */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25); /* Enhanced shadow for depth */
-    cursor: pointer; /* Ensure cursor indicates interactivity */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for scale and shadow */
+    transform: scale(1.05); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25); 
+    cursor: pointer; 
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; 
   }
 
   .tile9:hover {
@@ -195,12 +242,12 @@ BODY {
   .tile7,
   .tile8,
   .tile9 {
-    width: 180px; /* Further increased size for desktops */
+    width: 180px; 
     height: 180px;
-    background-size: 540px 540px; /* Adjusted to fit the new scale */
+    background-size: 540px 540px; 
   }
 
-  /* Adjust background positions for larger tiles */
+
   .tile1 {
     background-position: 0 0;
   }
@@ -227,5 +274,8 @@ BODY {
   }
   .tile9 {
     background-position: -360px -360px;
+  }
+  .modal-content {
+    width: 50%;
   }
 }
